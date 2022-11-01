@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+{% block head %}
+{% endblock %}
+
+{% block title %}Hello StageController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    table{
+  border-collapse: collapse;
+}
+
+tr, td{
+  border: 1px solid black;
+  padding: 10px;
+}
+</style>
+
+<div class="example-wrapper">
+
+<div>
+    <table>
+    <tr>
+        <td> Stage </td>
+        <td> Animateur </td>
+        <td> Prénom Animateur </td>
+    </tr>
+{% for unid in id %}
+    <tr>
+        <td>{{ unid.id }}</td>
+        <td>{{ unid.animateur.nomAnimateur }}</td>
+        <td>{{ unid.animateur.prenomAnimateur }}</td>
+    </tr>
+    </div>
+{% else %}
+    <p>Aucun stage</p>
+{% endfor %}
+    
+</div>
+{% endblock %}

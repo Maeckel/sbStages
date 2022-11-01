@@ -1,0 +1,26 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+app_stage:
+   path: /stages
+   controller: App\Controller\StageController::voirTous
+    
+app_IdAnimateur:
+   path: /stages/{idAnimateur}
+   controller: App\Controller\StageController::voirStagesAnimateur
+   requirements:
+       idAnimateur: '\d{1}'
+
+app_IdStage:
+   path: /stages/{idStage}/participants
+   controller: App\Controller\StageController::voirParticipants
+   requirements:
+       idStage: '\d{1}'
+
+app_IdIntervenant:
+   path: /stages/{idStages}/intervenants
+   controller: App\Controller\StageController::voirSpecialistes
+   requirements:
+       idStages: '\d{1}'
+
